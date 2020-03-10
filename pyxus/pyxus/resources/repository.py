@@ -246,7 +246,6 @@ class InstanceRepository(Repository):
         super(InstanceRepository, self).__init__(http_client, Instance)
 
     def create(self, entity):
-	print("TEST", entity.path, entity.data)
         result = self._http_client.post(entity.path, entity.data)
         if result is None:
             raise ValueError("Entity was not created")
